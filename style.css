@@ -1,0 +1,177 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #faf9fc;
+    color: #000005;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: white;
+    border-bottom: 1px solid #eee;
+    padding: 22px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #292239;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #1736bf;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.contact {
+    width: 100%;
+    max-width: 550px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title span {
+    color: #1530c8;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-title h1 {
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.section-title p {
+    color: #777181;
+    line-height: 1.6;
+}
+
+form {
+    padding: 35px;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px #eee;
+}
+
+form label {
+    display: block;
+    margin: 18px 0 9px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+form input:not([type="checkbox"]),
+form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: 1px solid #1a1dd0;
+    border-color: #1a1dd0;
+}
+
+form .consent {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 6px;
+    background: #3d42d9;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #6363d4;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+#message {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+footer {
+    background: #292239;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .section-title h1 {
+        font-size: 25px;
+    }
+
+    form {
+        padding: 22px;
+    }
+}
+
+.logo-container {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.vitrine-logo {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}

